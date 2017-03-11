@@ -20,11 +20,12 @@
   在事件处理函数中
   获取aqi-input输入的值，并显示在aqi-display中
   */
-  var air = document.getElementById("aqi-input").value;				//获取input内的值
-	var zhiliang = document.getElementById("aqi-display");			//获取“尚无录入”的元素
-	document.getElementById("button").onclick = function(){			//给按钮绑定事件
-		zhiliang.innerHTML = air;																	//将input的值赋给aqi-display
+	var air = document.getElementById("aqi-input");			//获取input元素
+	var zhiliang = document.getElementById("aqi-display");		//获取“尚无录入”的元素
+	document.getElementById("button").onclick = function(){		//给按钮绑定事件
+		zhiliang.innerHTML = air.value;				//将input的值赋给aqi-display
 	}
+
 }）（）;
 
 </script>
