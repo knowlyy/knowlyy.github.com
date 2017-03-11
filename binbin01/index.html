@@ -20,12 +20,17 @@
   在事件处理函数中
   获取aqi-input输入的值，并显示在aqi-display中
   */
-	var air = document.getElementById("aqi-input");			//获取input元素
-	var zhiliang = document.getElementById("aqi-display");		//获取“尚无录入”的元素
-	document.getElementById("button").onclick = function(){		//给按钮绑定事件
-		zhiliang.innerHTML = air.value;				//将input的值赋给aqi-display
-	}
-
+  document.getElementById("button").onclick = function(){	//给按钮绑定事件
+    var air = document.getElementById("aqi-input").value;	//获取input的值
+    var zhiliang = document.getElementById("aqi-display");	//获取span元素
+    if(air == ''){						//判断数据是否为空
+      zhiliang.innerHTML ="尚未录入";
+    }else if(air >= 0 && air <= 500){				//判断数据是否在0~500之间
+      zhiliang.innerHTML = air;
+    }else{
+      zhiliang.innerHTML = "您的输入有误,请重新输入";
+    }
+  }
 })();
 
 </script>
